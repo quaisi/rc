@@ -1,0 +1,19 @@
+startup_message off
+autodetach on
+nonblock on
+defutf8 on
+
+scrollback off 
+
+caption always "%{= kw}%-w%{= BW}%n %t%{-}%+w %-= %c"
+
+screen -t music      0  ncmpcpp
+screen -t bash       1  bash
+screen -t chewie     2  ssh -Y simon@192.168.1.9
+screen -t python     3  python2.7 
+screen -t irssi      4  irssi -c "irc.freenode.net"
+screen -t htop       5  htop  
+screen -t macbook    6  ssh -C simon@192.168.1.5
+
+select 1
+
