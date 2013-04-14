@@ -6,6 +6,9 @@ set shortmess+=I
 ""Colorscheme
 colorscheme evening
 
+"cursor follows search
+set incsearch
+
 "don't highlight search 
 set nohlsearch
 
@@ -20,8 +23,6 @@ set number
 "statusbar at bottom
 set laststatus=1
 
-"cursor follows search
-set incsearch
 
 "stop words wrapping in middle
 set linebreak
@@ -65,3 +66,25 @@ filetype indent on      " load indent file for specific file type
 
 set t_RV=               " http://bugs.debian.org/608242,
 "http://groups.google.com/group/vim_dev/browse_thread/thread/9770ea844cec3282
+
+"4 space tab 
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+
+" Pathogen plugin handler
+call pathogen#infect() 
+
+
+map <F3> :SyntasticCheck<CR>
+let g:syntastic_check_on_open=1 
+let g:syntastic_enable_signs=1 
+let g:syntastic_enable_highlighting=1 
+let g:syntastic_auto_loc_list=1 
+let g:syntastic_loc_list_height=5 
+let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['python', 'javascript', 'css', 'coffee', 'go', 'html', 'rst', 'sass', 'yaml'], 'passive_filetypes': ['make'] } 
+let g:syntastic_python_checker = 'flake8' 
+let g:syntastic_javascript_checker = 'jslint' 
+
